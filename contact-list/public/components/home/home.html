@@ -1,0 +1,14 @@
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <!--no authenticated-->
+        <div class="row center" ng-cloak ng-if="!isAuthenticated" >
+            <h1 class="header center blue-text">You are not logged in</h1>
+            <button class="btn-large waves-effect waves-light orange" ng-click="vm.authService.login()">Log In</button>
+        </div>
+        <!-- authenticated-->
+        <div class="row center" ng-cloak ng-if="isAuthenticated" >
+            <h1 class="header center blue-text">{{vm.profile.nickname}}, you are logged in</h1>
+            <button class="btn-large waves-effect waves-light orange" ui-sref="contacts">Access to your contact list</button>
+        </div>
+    </div>
+</div>

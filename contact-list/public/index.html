@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+        <title>Contactlist</title>
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="bower_components/materialize/dist/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+        <!-- Viewport settings-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <!-- Custom style -->
+        <link href="css/style.css" rel="stylesheet" />
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div  ng-app="app">
+            <nav class="light-blue lighten-1" role="navigation">
+                <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Contact List App</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a ui-sref="home">Home</a></li>
+                        <li ng-cloak ng-if="isAuthenticated"><a ui-sref="contacts">Contacts</a></li>
+                        <li ng-cloak ng-if="!isAuthenticated"><a ui-sref="home" ng-click="authService.login()">Log In</a></li>
+                        <li ng-cloak ng-if="isAuthenticated"><a ui-sref="home" ng-click="logoutFromAuth0()">Log Out</a></li>
+                        <li ng-cloak ng-if="isAuthenticated">
+                            <div  class="login-photo">
+                                <img ng-cloak ng-if="isAuthenticated" ng-src="{{vm.profile.picture}}" alt="" />
+                                <img ng-src="{{profile.picture}}">
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul id="nav-mobile" class="side-nav">
+                        <li><a ui-sref="home">Home</a></li>
+                        <li ng-cloak ng-if="isAuthenticated"><a ui-sref="contacts">Contacts</a></li>
+                        <li ng-cloak ng-if="!isAuthenticated"><a ui-sref="home" ng-click="authService.login()">Log In</a></li>
+                        <li ng-cloak ng-if="isAuthenticated"><a ui-sref="home" ng-click="logoutFromAuth0()">Log Out</a></li>
+                        <li ng-cloak ng-if="isAuthenticated">
+                            <div  class="login-photo">
+                                <img ng-cloak ng-if="isAuthenticated" ng-src="{{vm.profile.picture}}" alt="" />
+                                <img ng-src="{{profile.picture}}">
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                </div>
+            </nav>
+
+            <div class="viewContainer" ui-view></div>
+
+
+        </div>
+        <!--  Scripts-->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+        <script type="text/javascript" src="auth0-variables.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script type="text/javascript" src="bower_components/auth0-lock/build/lock.js"></script>
+        <script type="text/javascript" src="bower_components/angular-lock/dist/angular-lock.js"></script>
+        <script type="text/javascript" src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+        <script type="text/javascript" src="bower_components/angular-auth0/dist/angular-auth0.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="app.run.js"></script>
+        <script type="text/javascript" src="components/home/home.controller.js"></script>
+        <script type="text/javascript" src="components/contacts/contacts.controller.js"></script>
+        <script type="text/javascript" src="components/login/login.controller.js"></script>
+        <script type="text/javascript" src="components/auth/auth.service.js"></script>
+        <script>
+                                (function ($) {
+                                    $(function () {
+
+                                        $('.button-collapse').sideNav();
+
+                                    });
+                                })(jQuery);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "contactlist",
+  "description": "A simple contactlist",
+  "main": "server.js",
+  "authors": [
+    "Pablo Fernandez <pablofm@us.es>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "homepage": "https://github.com/pafmon/contactlist",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular-jwt": "*",
+    "angular-lock": "*",
+    "angular-ui-router": "*",
+    "jquery": "*",
+    "bootstrap": "*",
+    "angular-auth0": "",
+    "materialize": "^0.97.8"
+  }
+}
