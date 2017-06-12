@@ -1,4 +1,4 @@
-Example Voting App
+Docker Compose Demo App
 =========
 
 Getting started
