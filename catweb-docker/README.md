@@ -1,4 +1,4 @@
-# Docker Compose Demo
+# Docker Demo Python App
 
 ## Demo setup
 
